@@ -1,4 +1,4 @@
-package main;
+package Sem1.main;
 
 public class Owner {
     String name;

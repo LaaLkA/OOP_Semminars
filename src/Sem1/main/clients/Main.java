@@ -1,6 +1,6 @@
-package main.clients;
+package Sem1.main.clients;
 
-import main.*;
+import Sem1.main.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ public class Main {
 
         System.out.println(cat);
 
-        Animal catty = new Cat();
+        Cat catty = new Cat();
         Dog goodBoy = new Dog();
 
         System.out.println(goodBoy.getType());

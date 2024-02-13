@@ -1,4 +1,4 @@
-package main;
+package Sem1.main;
 
 import java.time.LocalDate;
 
@@ -6,8 +6,8 @@ public class Cat extends Animal {
     // Todo Напомнитть в чём разница в double
     Double discount;
 
-    public Cat(String nickname, Owner owner, LocalDate birthDate, Illness illustrious, double discount) {
-        super(nickname, owner, birthDate, illustrious);
+    public Cat(String nickname, Owner owner, LocalDate birthDate, Illness illness, double discount) {
+        super(nickname, owner, birthDate, illness);
         this.discount = discount;
     }
 
@@ -15,7 +15,6 @@ public class Cat extends Animal {
         super();
         this.discount = 10D;
     }
-
     public Double getDiscount() {
         return discount;
     }
