@@ -1,4 +1,4 @@
-package main;
+package Main;
 
 import java.time.LocalDate;
 
@@ -12,8 +12,8 @@ public class Fish extends Animal{
     }
 
     @Override
-    public void toGo() {
-        System.out.println("Рыбы не умеют ходить!");
+    public void eat() {
+        System.out.println("Fish eating");
     }
 
     @Override

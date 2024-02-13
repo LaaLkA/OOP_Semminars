@@ -1,4 +1,4 @@
-package main;
+package Main;
 
 import java.time.LocalDate;
 
@@ -9,6 +9,11 @@ public class Duck extends Animal{
 
     public Duck() {
         super("Duck", new Owner("Хозяин"), LocalDate.now(), new Illness("Болеет"));
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("Duck eating");
     }
 
 }

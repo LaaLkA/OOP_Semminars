@@ -1,8 +1,8 @@
-package main;
+package Main;
 
 import java.time.LocalDate;
 
-public class Animal {
+public abstract class Animal {
     protected String nickname;
     protected Owner owner;
     protected LocalDate birthDate;
@@ -47,38 +47,28 @@ public class Animal {
         wakeUp("12:00");
     }
 
-    private void hunt() {
-        System.out.println("Животное охотится");
-    }
-
-    private void eat() {
-        System.out.println("Животное ест");
-    }
+    public abstract void eat();
 
     private void sleep() {
         System.out.println("Животное уснуло");
     }
 
-    public void liveCycle() {
-        wakeUp("12:00");
-        hunt();
-        eat();
-        sleep();
-    }
+//    public void liveCycle() {
+//        wakeUp("12:00");
+//        hunt();
+//        eat();
+//        sleep();
+//    }
 
     public String getType() {
         return getClass().getSimpleName();
     }
 
-    public void toGo() {
-        System.out.println(getClass().getSimpleName() + " идёт");
-    }
-
-    public void fly() {
+    protected void fly() {
         System.out.println(getClass().getSimpleName() + " летит");
     }
 
-    public void swim() {
+    protected void swim() {
         System.out.println(getClass().getSimpleName() + " плывёт");
     }
 
