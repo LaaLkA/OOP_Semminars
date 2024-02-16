@@ -16,6 +16,11 @@ public class Nurse extends People implements Goable, Flyable, Swimable {
     }
 
     @Override
+    public String toString() {
+        return String.format("%s %s, %s, %s, %s", this.firstName, this.lastName, this.birthDate.toString(), this.id, this.assignedNameDoctor);
+    }
+
+    @Override
     public void fly() {
         System.out.println("Nurse can't fly. Only by plane");
     }

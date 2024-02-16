@@ -15,6 +15,11 @@ public abstract class People {
         this.birthDate = birthDate;
     }
 
+    @Override
+    public String toString() {
+        return String.format("%s %s %d %s", this.firstName, this.lastName, id, birthDate);
+    }
+
     protected People(){
         this("ИмяЧеловека", "ФамилияЧеловека", -1, LocalDate.now());
     }
