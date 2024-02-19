@@ -1,6 +1,5 @@
-package Main.Personal;
+package Main.clients.old;
 
-import java.sql.SQLOutput;
 import java.time.LocalDate;
 
 public class Doctor extends People implements Goable, Flyable, Swimable {

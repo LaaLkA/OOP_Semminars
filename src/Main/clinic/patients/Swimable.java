@@ -1,4 +1,4 @@
-package Main.Personal;
+package Main.clinic.patients;
 
 public interface Swimable {
     void swim();

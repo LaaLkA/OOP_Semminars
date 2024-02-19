@@ -1,4 +1,4 @@
-package Main;
+package Main.clients.old;
 
 public class Owner {
     String name;

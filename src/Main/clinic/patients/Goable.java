@@ -1,4 +1,5 @@
-package Main.Personal;
+package Main.clinic.patients;
+
 
 public interface Goable {
     void go();
@@ -6,5 +7,4 @@ public interface Goable {
     default double getRunSpeed(){
         return 8D;
     }
-
 }
