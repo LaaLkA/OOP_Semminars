@@ -1,4 +1,4 @@
-package Main.Personal;
+package Main.clients.old;
 
 public interface Flyable {
     void fly();
