@@ -26,6 +26,17 @@ public class Pharmacy2 implements Iterable<Component> {
 
     @Override
     public Iterator<Component> iterator() {
-        return null;
+        return new Iterator<Component>() {
+
+            @Override
+            public boolean hasNext() {
+                return index < components.size();
+            }
+
+            @Override
+            public Component next() {
+                return components.get(index++);
+            }
+        };
     }
 }

@@ -4,7 +4,7 @@ import Main.drugstore.components.Azitromite;
 import Main.drugstore.components.Penicillin;
 import Main.drugstore.components.Water;
 
-import java.util.Iterator;
+import java.util.*;
 
 public class Drugmain {
     public static void main(String[] args) {
@@ -12,16 +12,33 @@ public class Drugmain {
         Component azitromite = new Azitromite("Azitromite", 2D, 14);
         Component penicillin = new Penicillin("Penicillin", 1.6D, 6);
 
-        Pharmacy p1 = new Pharmacy();
-        Pharmacy p2 = new Pharmacy();
+        Pharmacy2 p1 = new Pharmacy2();
+        Pharmacy2 p2 = new Pharmacy2();
+        Pharmacy2 p3 = new Pharmacy2();
 
-        p1.addComponents(water, azitromite, penicillin);
+        p1.addComponents(water, penicillin);
         p2.addComponents(penicillin, water);
+        p3.addComponents(water, azitromite, penicillin);
 
-        Iterator<Component> iterator = p1;
+        List<Component> components = new ArrayList<Component>();
 
-        while (iterator.hasNext()) {
-            System.out.println(p1.next().toString());
+        components.add(penicillin);
+        components.add(azitromite);
+        components.add(water);
+
+        System.out.println(components);
+
+        Collections.sort(components, Comparator.reverseOrder());
+        System.out.println(components);
+
+//        Iterator<Component> iterator = p1;
+//
+//        while (iterator.hasNext()) {
+//            System.out.println(p1.next().toString());
+//        }
+
+        for (Component c: p2) {
+            System.out.println(c);
         }
     }
 }
