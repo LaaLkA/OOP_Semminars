@@ -1,7 +1,7 @@
 package Main.list.core.impl;
 
-import Main.list.core.util.ArrayIterator;
 import Main.list.core.GBList;
+import Main.list.core.util.ArrayIterator;
 
 import java.util.Iterator;
 
