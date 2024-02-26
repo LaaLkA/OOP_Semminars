@@ -14,11 +14,11 @@ public class UserView {
         this.userController = userController;
     }
 
-    public void run(){
+    public void run() {
         Commands com;
 
         while (true) {
-            String command = prompt("Введите команду: ");
+            String command = prompt("Введите команду: ").toUpperCase();
             com = Commands.valueOf(command);
             if (com == Commands.EXIT) return;
             switch (com) {
@@ -38,6 +38,10 @@ public class UserView {
                     break;
                 case LIST:
                     System.out.println(userController.readAll());
+                    break;
+                case DELETE:
+                    String DeletedUserId = prompt("Enter deleted user id: ");
+                    userController.deleteUser(DeletedUserId);
                     break;
                 case UPDATE:
                     String userId = prompt("Enter user id: ");
