@@ -12,7 +12,7 @@ import java.util.Optional;
 
 public class UserRepository implements GBRepository {
     private final UserMapper mapper;
-    private final String fileName;
+    public final String fileName;
 
     public UserRepository(String fileName) {
         this.mapper = new UserMapper();
@@ -31,7 +31,6 @@ public class UserRepository implements GBRepository {
 
     @Override
     public User create(User user) {
-
         List<User> users = findAll();
         long max = 0L;
         for (User u : users) {
@@ -74,12 +73,18 @@ public class UserRepository implements GBRepository {
     }
 
     @Override
-    public boolean delete(Long id) {
+    public void delete(Long id) {
         List<User> users = findAll();
-        User deletedUser = findById(id).orElseThrow(() -> new RuntimeException("User not found"));
-        users.remove(deletedUser);
+        User deleted = findById(id).orElseThrow(() -> new RuntimeException("User not found"));
+//        System.out.println("Пользователь на удаление " + deleted);
+        users.remove(deleted);
         write(users);
-        return true;
+//        List<User> newUsers = new ArrayList<User>();
+//        for (User user : users) {
+//            if (!user.equals(deleted)) newUsers.add(user);
+//        }
+//        System.out.println("Печать списка после удаления " + newUsers);
+//        write(newUsers);
     }
 
     private void write(List<User> users) {
