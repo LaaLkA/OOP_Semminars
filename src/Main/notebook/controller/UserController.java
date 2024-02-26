@@ -36,7 +36,7 @@ public class UserController {
         repository.update(Long.parseLong(userId), update);
     }
 
-    public void deleteUser (String DeleteUserId) {
-        repository.delete(Long.parseLong(DeleteUserId));
+    public void deleteUser (Long DeleteUserId) {
+        repository.delete(DeleteUserId);
     }
 }

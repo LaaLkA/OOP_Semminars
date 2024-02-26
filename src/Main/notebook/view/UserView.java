@@ -40,7 +40,7 @@ public class UserView {
                     System.out.println(userController.readAll());
                     break;
                 case DELETE:
-                    String DeletedUserId = prompt("Enter deleted user id: ");
+                    Long DeletedUserId = Long.parseLong(prompt("Enter deleted user id: "));
                     userController.deleteUser(DeletedUserId);
                     break;
                 case UPDATE:
