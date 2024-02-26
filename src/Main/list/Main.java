@@ -32,5 +32,6 @@ public class Main {
         linkedList.print();
 
         System.out.println(linkedList.get(3));
+        System.out.println("Размер массива: " + linkedList.size());
     }
 }
