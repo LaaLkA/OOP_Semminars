@@ -14,9 +14,9 @@ public class UserRepository implements GBRepository {
     private final UserMapper mapper;
     public final String fileName;
 
-    public UserRepository(String fileName) {
+    public UserRepository() {
         this.mapper = new UserMapper();
-        this.fileName = fileName;
+        this.fileName = DBConnector.DB_PATH;
     }
 
     @Override
