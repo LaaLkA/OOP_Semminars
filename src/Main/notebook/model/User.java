@@ -1,5 +1,7 @@
 package Main.notebook.model;
 
+import java.util.Objects;
+
 public class User {
     private Long id;
     private String firstName;
@@ -52,5 +54,17 @@ public class User {
     @Override
     public String toString() {
         return String.format("Идентафикатор: %s\nИмя: %s,\nФамилия: %s,\nТелефон: %s", id, firstName, lastName, phone);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(getId());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof User user)) return false;
+        return getId().equals(user.getId());
     }
 }

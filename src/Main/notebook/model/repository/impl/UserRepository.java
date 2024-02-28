@@ -47,18 +47,22 @@ public class UserRepository implements GBRepository {
     }
 
     @Override
-    public Optional<User> findById(Long id) {
-        List<User> users = findAll();
-        return users.stream()
+    public User findById(Long id) {
+//        List<User> users = findAll();
+        return findAll().stream()
                 .filter(u -> u.getId()
                         .equals(id))
-                .findFirst();
+                .findFirst().orElseThrow(() -> new RuntimeException("User not found"));
     }
 
     @Override
     public Optional<User> update(Long userId, User update) {
         List<User> users = findAll();
-        User editUser = findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
+//        User editUser = findById(userId);
+        User editUser = users.stream()
+                .filter(u -> u.getId()
+                        .equals(userId))
+                .findFirst().orElseThrow(() -> new RuntimeException("User not found"));
         if (!update.getFirstName().isEmpty()) {
             editUser.setFirstName(update.getFirstName());
         }
@@ -75,7 +79,7 @@ public class UserRepository implements GBRepository {
     @Override
     public void delete(Long id) {
         List<User> users = findAll();
-        User deleted = findById(id).orElseThrow(() -> new RuntimeException("User not found"));
+        User deleted = findById(id);
 //        System.out.println("Пользователь на удаление " + deleted);
         users.remove(deleted);
         write(users);
